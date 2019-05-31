@@ -102,9 +102,9 @@
 
             type: "post",
             data: data,
-            url: "/Register/SaveData",
-            sucess: function () {
-
+            url: "/User/Login",
+            sucess: function (result) {
+                alert(result);
             }
         });
     }
