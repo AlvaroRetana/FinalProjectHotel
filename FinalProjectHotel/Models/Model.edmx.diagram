@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="Model.Historial_Transacciones" Width="1.5" PointX="10.5" PointY="15.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Precios" Width="1.5" PointX="3" PointY="27.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Reservacion_habitaciones" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Usuario_Admin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Model.FK__Actividad__ID_Co__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Reservaci__ID_Ac__73BA3083" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Articulos__ID_Co__619B8048" ManuallyRouted="false" />
@@ -40,6 +39,7 @@
         <AssociationConnector Association="Model.FK__Reservaci__ID_Co__71D1E811" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Habitacio__ID_Pr__6C190EBB" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Historial__ID_Ha__6EF57B66" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.Usuario_Admin" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

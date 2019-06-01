@@ -22,5 +22,6 @@ namespace FinalProjectHotel.Models
         public string Apellido2 { get; set; }
         public int Telefono { get; set; }
         public string Correo { get; set; }
+        public Nullable<bool> IsValid { get; set; }
     }
 }

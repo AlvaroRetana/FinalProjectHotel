@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Actividades">
           <Key>
             <PropertyRef Name="ID" />
@@ -154,6 +154,7 @@
           <Property Name="Apellido2" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Telefono" Type="int" Nullable="false" />
           <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsValid" Type="bit" />
         </EntityType>
         <Association Name="FK__Actividad__ID_Co__60A75C0F">
           <End Role="Consecutivo" Type="Self.Consecutivo" Multiplicity="1" />
@@ -507,8 +508,7 @@
             <End Role="Reservacion_habitaciones" EntitySet="Reservacion_habitaciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -690,19 +690,6 @@
           <NavigationProperty Name="Actividades" Relationship="Self.FK__Reservaci__ID_Ac__73BA3083" FromRole="Reservacion_habitaciones" ToRole="Actividades" />
           <NavigationProperty Name="Clientes" Relationship="Self.FK__Reservaci__ID_Cl__72C60C4A" FromRole="Reservacion_habitaciones" ToRole="Clientes" />
           <NavigationProperty Name="Consecutivo" Relationship="Self.FK__Reservaci__ID_Co__71D1E811" FromRole="Reservacion_habitaciones" ToRole="Consecutivo" />
-        </EntityType>
-        <EntityType Name="Usuario_Admin">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Telefono" Type="Int32" Nullable="false" />
-          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <Association Name="FK__Actividad__ID_Co__60A75C0F">
           <End Role="Consecutivo" Type="Self.Consecutivo" Multiplicity="1" />
@@ -970,7 +957,6 @@
           <EntitySet Name="Historial_Transacciones" EntityType="Self.Historial_Transacciones" />
           <EntitySet Name="Precios" EntityType="Self.Precios" />
           <EntitySet Name="Reservacion_habitaciones" EntityType="Self.Reservacion_habitaciones" />
-          <EntitySet Name="Usuario_Admin" EntityType="Self.Usuario_Admin" />
           <AssociationSet Name="FK__Actividad__ID_Co__60A75C0F" Association="Self.FK__Actividad__ID_Co__60A75C0F">
             <End Role="Consecutivo" EntitySet="Consecutivo" />
             <End Role="Actividades" EntitySet="Actividades" />
@@ -1055,7 +1041,22 @@
             <End Role="Habitaciones" EntitySet="Habitaciones" />
             <End Role="Historial_Transacciones" EntitySet="Historial_Transacciones" />
           </AssociationSet>
+          <EntitySet Name="Usuario_Admin" EntityType="Model.Usuario_Admin" />
         </EntityContainer>
+        <EntityType Name="Usuario_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="Correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsValid" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1215,14 +1216,15 @@
           <EntitySetMapping Name="Usuario_Admin">
             <EntityTypeMapping TypeName="Model.Usuario_Admin">
               <MappingFragment StoreEntitySet="Usuario_Admin">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
-                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

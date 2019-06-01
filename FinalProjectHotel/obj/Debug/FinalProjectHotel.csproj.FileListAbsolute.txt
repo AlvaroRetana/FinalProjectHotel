@@ -81,3 +81,7 @@ C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\obj\Debug\FinalProjectH
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\obj\Debug\FinalProjectHotel.csproj.CopyComplete
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\obj\Debug\FinalProjectHotel.dll
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\obj\Debug\FinalProjectHotel.pdb
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.dll
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.SqlServer.dll
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.xml
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.SqlServer.xml
