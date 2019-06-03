@@ -13,6 +13,7 @@
             <div class="col-md-4 col-md-offset-4 alert alert-info">
                 <h3 class="text-center">Login</h3>
                 <form id="loginForm">
+                    <div id="msg"><ul style="color:red;"> Invalid Username Or Password</ul></div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">
@@ -31,7 +32,7 @@
                     </div>
                 </form>
                 <div class="form-group">
-                    <button class="btn btn-info form-control" type="submit">
+                    <button class="btn btn-info form-control" type="submit" onclick="Login()">
                         <i class="glyphicon glyphicon-log-in"></i>
                         Login
                     </button>
@@ -169,6 +170,28 @@
                 $("#Registration")[0].reset();
             }
         });
+        }
+
+    $("#msg").hide();
+
+    var Login = function () {
+        var data = $("#loginForm").serialize();
+        $.ajax({
+            type: "post",
+            url: "/User/CheckValidUser",
+            data: data,
+            success: function (result) {
+                if (result == "Fail") {
+                    $("#loginForm")[0].reset();
+                    $("#msg").show();
+                }
+                else {
+                    window.location.href = "/User/AfterLogin";
+                        $("#msg").hide();
+                }
+            }
+        })
+
     }
 
 </script>

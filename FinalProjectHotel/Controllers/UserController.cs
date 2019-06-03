@@ -26,5 +26,38 @@ namespace FinalProjectHotel.Controllers
             return Json("Registration Successfull", JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult CheckValidUSer(Usuario_Admin model)
+        {
+            string result = "Fail";
+            var DataItem = db.Usuario_Admin.Where(x => x.Username == model.Username && x.Password == model.Password).SingleOrDefault();
+            if (DataItem != null)
+            {
+                Session["UserID"] = DataItem.ID.ToString();
+                Session["UserName"] = DataItem.Username.ToString();
+                result = "Success";
+            }
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AfterLogin()
+        {
+            if(Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon();
+            return RedirectToAction("Login");
+        }
+
     }
 }
