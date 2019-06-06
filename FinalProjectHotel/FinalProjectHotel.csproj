@@ -133,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account\ChangePasswordModel.cs" />
     <Compile Include="Models\Actividades.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -197,6 +198,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\wallLogin.jpg" />
     <Content Include="Content\Login_v7\css\main.css" />
     <Content Include="Content\Login_v7\css\util.css" />
     <Content Include="Content\Login_v7\fonts\font-awesome-4.7.0\._HELP-US-OUT.txt" />
@@ -367,6 +369,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\AfterLogin.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
