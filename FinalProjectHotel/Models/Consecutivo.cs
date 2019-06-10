@@ -17,15 +17,16 @@ namespace FinalProjectHotel.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Consecutivo()
         {
-            this.Actividades = new HashSet<Actividades>();
-            this.Articulos = new HashSet<Articulos>();
+            this.Actividad = new HashSet<Actividad>();
+            this.Articulo = new HashSet<Articulo>();
             this.Bitacora = new HashSet<Bitacora>();
-            this.Clientes = new HashSet<Clientes>();
-            this.Codigos_Descuento = new HashSet<Codigos_Descuento>();
-            this.Habitaciones = new HashSet<Habitaciones>();
-            this.Historial_Transacciones = new HashSet<Historial_Transacciones>();
-            this.Precios = new HashSet<Precios>();
-            this.Reservacion_habitaciones = new HashSet<Reservacion_habitaciones>();
+            this.Cliente = new HashSet<Cliente>();
+            this.Codigo_Descuento = new HashSet<Codigo_Descuento>();
+            this.Habitacion = new HashSet<Habitacion>();
+            this.Historial_Transaccion = new HashSet<Historial_Transaccion>();
+            this.Precio = new HashSet<Precio>();
+            this.Reservacion_habitacion = new HashSet<Reservacion_habitacion>();
+            this.Usuario_Admin = new HashSet<Usuario_Admin>();
         }
     
         public int ID { get; set; }
@@ -36,22 +37,24 @@ namespace FinalProjectHotel.Models
         public Nullable<int> Rango_final { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Actividades> Actividades { get; set; }
+        public virtual ICollection<Actividad> Actividad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Articulos> Articulos { get; set; }
+        public virtual ICollection<Articulo> Articulo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bitacora> Bitacora { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Clientes> Clientes { get; set; }
+        public virtual ICollection<Cliente> Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Codigos_Descuento> Codigos_Descuento { get; set; }
+        public virtual ICollection<Codigo_Descuento> Codigo_Descuento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Habitaciones> Habitaciones { get; set; }
+        public virtual ICollection<Habitacion> Habitacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Historial_Transacciones> Historial_Transacciones { get; set; }
+        public virtual ICollection<Historial_Transaccion> Historial_Transaccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Precios> Precios { get; set; }
+        public virtual ICollection<Precio> Precio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservacion_habitaciones> Reservacion_habitaciones { get; set; }
+        public virtual ICollection<Reservacion_habitacion> Reservacion_habitacion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario_Admin> Usuario_Admin { get; set; }
     }
 }

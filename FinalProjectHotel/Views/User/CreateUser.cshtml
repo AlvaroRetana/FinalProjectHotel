@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<body id="ShowModal" background="https://ak1.picdn.net/shutterstock/videos/31638271/thumb/1.jpg">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h4>Registration Form</h4>
+                <div id="message1">
+                    <div class="alert alert-success">
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <strong>Successs Message! Your Registration Is Complete.</strong>
+                    </div>
+                </div>
+                <div id="message2">
+                    <div class="alert alert-danger">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        <strong>Error Message! Your Registration Is Not Complete.</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form id="Registration">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input class="form-control" type="text" name="UserName" id="User" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-lock"></i>
+                            </span>
+                            <input class="form-control" type="password" name="Password" id="Password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                            </span>
+                            <input class="form-control" type="email" name="Correo" id="Email" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input class="form-control" type="text" name="Nombre" id="Name" placeholder="First Name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input class="form-control" type="text" name="Apellido1" id="Lastname" placeholder="Last Name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input class="form-control" type="text" name="Apellido2" id="Secondlastname" placeholder="Second Last Name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-phone"></i>
+                            </span>
+                            <input class="form-control" type="number" name="Telefono" id="Phone" placeholder="Phone number" />
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <button class="btn btn-info form-control" type="submit" onclick="SaveForm()">
+                        <i class="glyphicon glyphicon-registration-mark"></i>
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="~/Scripts/jquery-logic/login-jquery.js"></script>
+

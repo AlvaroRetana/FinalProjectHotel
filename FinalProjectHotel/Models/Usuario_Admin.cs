@@ -22,6 +22,13 @@ namespace FinalProjectHotel.Models
         public string Apellido2 { get; set; }
         public int Telefono { get; set; }
         public string Correo { get; set; }
-        public Nullable<bool> IsValid { get; set; }
+        public Nullable<int> ID_Consecutivo { get; set; }
+        public string Administrador { get; set; }
+        public string Seguridad { get; set; }
+        public string Consecutico { get; set; }
+        public string Mantenimiento { get; set; }
+        public string Consulta { get; set; }
+    
+        public virtual Consecutivo Consecutivo { get; set; }
     }
 }

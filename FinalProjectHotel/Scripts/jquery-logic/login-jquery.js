@@ -1,8 +1,5 @@
-﻿function SignUp() {
-    $("#ShowModal").modal();
-    $("#message1").hide();
-    $("#message2").hide();
-}
+﻿$("#message1").hide();
+$("#message2").hide();
 
 function SaveForm() {
     var username = $("#User").val();

@@ -85,3 +85,5 @@ C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.dll
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.SqlServer.dll
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.xml
 C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\EntityFramework.SqlServer.xml
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\GridMvc.dll
+C:\Users\MSI\Desktop\FinalProjectHotel\FinalProjectHotel\bin\System.Linq.Dynamic.dll

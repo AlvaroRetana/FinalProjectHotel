@@ -1,0 +1,88 @@
+﻿@model List<FinalProjectHotel.Models.Cliente>
+
+@{
+    Layout = null;
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserStatus</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Client Status</h2>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Search</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    @using (Html.BeginForm("UserStatus", "User", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+
+                            <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="search" />
+                        </div>
+                        <button type="submit" value="Search" class="btn btn-success">Search</button>
+                    }
+                </div>
+            </div>
+
+        </nav>
+
+        <div>
+            @grid.Table(
+           tableStyle: "table table-responsive table-bordered",
+           columns: grid.Columns(
+               grid.Column(columnName: "Nombre", header: "First Name"),
+               grid.Column(columnName: "Apellido1", header: "Last Name"),
+               grid.Column(columnName: "Apellido2", header: "Seond Last Name"),
+               grid.Column(columnName: "Correo", header: "Email"),
+               grid.Column(columnName: "Activo", header: "Active"),
+               grid.Column(columnName: "Telefono", header: "Phone")
+
+            )
+           )
+            <div class="row">
+                <div class="col-sm-7">
+                    @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+
+                </div>
+            </div>
+
+            @Html.Hidden("dir", grid.SortDirection)
+            @Html.Hidden("col", grid.SortColumn)
+
+        </div>
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            try {
+                var dir = $('#dir').val();
+                var col = $('#col').val();
+                var header = $("th a[href*=" + col + "]");
+                if (dir == "Ascending") {
+                    header.text(header.text() + "  ▲")
+                }
+                if (dir == "Descending") {
+                    header.text(header.text() + "  ▼")
+                }
+            } catch (e) {
+
+            }
+
+        });
+
+
+    </script>
+</body>
+</html>
