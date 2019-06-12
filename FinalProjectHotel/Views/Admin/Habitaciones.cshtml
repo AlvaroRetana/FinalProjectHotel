@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Habitaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- ============================================================== -->
+<!-- Form Habitaciones -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="section-block" id="SectionHabitaciones">
+            <h3 class="section-title">Habitaciones</h3>
+
+        </div>
+        <div class="card">
+            <h5 class="card-header">Nueva Habitación</h5>
+            <div class="card-body">
+
+                <!-- Nombre:  -->
+                <div class="form-group">
+                    <label for="InputNombre">Nombre:</label>
+                    <input id="InputNombre" type="text" class="form-control">
+                </div>
+                <!-- Descripción:  -->
+                <div class="form-group" id="SectionDescripcion">
+                    <label for="ComboBoxDescripcion">Descripción</label>
+                    <select class="form-control" id="ComboBoxDescripcion">
+                        <option>Normal</option>
+                        <option>Deluxe</option>
+                        <option>Condominio</option>
+                    </select>
+                </div>
+                <!-- Número:  -->
+                <div class="form-group" id="SectionNumeroConsecutivo">
+                    <label for="InputNumero" class="col-form-label">Número:</label>
+                    <input id="InputNumero" type="number" class="form-control" placeholder="0">
+
+                </div>
+                <!-- Precio:  -->
+                <div class="form-group">
+                    <label for="InputPrecio" class="col-form-label">Precio:</label>
+                    <input id="InputPrecio" type="number" class="form-control" placeholder="0">
+                </div>
+                <!-- Disponibilidad:  -->
+                <div class="form-group">
+                    <label for="ComboBoxDisponibilidad" class="col-form-label">Disponibilidad:</label>
+                    <select class="form-control" id="ComboBoxDisponibilidad">
+                        <option>Sí</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <!-- Imagen:  -->
+
+                <div class="form-group">
+                    <input type="file" id="fileImage" accept="image/png, image/jpeg">
+                </div>
+                <!-- Insertar Habitación:  -->
+                <div class="form-group">
+                    <input class="btn-default" type="button" id="btnSave" value="Guardar" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Form Habitaciones  -->
+<!-- ============================================================== -->
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="~/Scripts/jquery-logic/room-jquery.js"></script>
+
+<script type="text/javascript"></script>
+
+
+
+
+

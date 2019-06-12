@@ -1,0 +1,36 @@
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.dll.config
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.dll
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.pdb
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.GenerateResource.cache
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.dll
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.dll.config
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\BLL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.GenerateResource.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\BLL\obj\Debug\BLL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\bin\Debug\BLL.dll.config
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\bin\Debug\BLL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\bin\Debug\BLL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.Properties.Resources.resources
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.csproj.GenerateResource.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\BLL\obj\Debug\BLL.pdb

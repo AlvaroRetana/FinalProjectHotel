@@ -1,0 +1,15 @@
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\DAL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\DAL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.dll
+C:\Users\Sebas\Documents\Mis trabajos\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\DAL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\DAL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\H-Mandiola\DAL\obj\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\bin\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\bin\Debug\DAL.pdb
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.dll
+C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Consecutive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <!-- ============================================================== -->
+        <!-- Form Consecutivo -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="section-block" id="SectionConsecutivo">
+                    <h3 class="section-title">Consecutivo</h3>
+
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Nuevo Consecutivo</h5>
+                    <div class="card-body">
+
+                        <!-- Descripción:  -->
+                        <div class="form-group" id="SectionDescripcion">
+                            <label for="ComboBoxDescripcion">Descripción</label>
+                            <select class="form-control" id="ComboBoxDescripcion">
+                                <option>Habitaciones</option>
+                                <option>Actividades</option>
+                                <option>Precios</option>
+                                <option>Activos</option>
+                                <option>Reservaciones de las habitaciones</option>
+                                <option>Clientes</option>
+                                <option>Bitácora</option>
+                            </select>
+                        </div>
+                        <!-- Consecutivo:  -->
+                        <div class="form-group" id="SectionNumeroConsecutivo">
+                            <label for="InputConsecutivo" class="col-form-label">Consecutivo</label>
+                            <input id="InputConsecutivo" type="number" required="" class="form-control" placeholder="0">
+
+                        </div>
+                        <!-- Posee Prefijo:  -->
+                        <div class="form-group" id="SectionPrefijo">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked="" id="HavePrefix" class="custom-control-input"><span class="custom-control-label">Posee Prefijo</span>
+                            </label>
+                        </div>
+                        <!-- Prefijo:  -->
+                        <div class="form-group">
+                            <label for="InputPrefijo">Prefijo:</label>
+                            <input id="InputPrefijo" type="text" class="form-control" onclick="CheckBoxes()">
+                        </div>
+                        <!-- Posee Rango:  -->
+                        <div class="form-group" id="SectionRango">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" checked=""  id="HaveRange" class="custom-control-input"><span class="custom-control-label">Posee Rango</span>
+                            </label>
+                        </div>
+                        <!-- Rango Inicial:  -->
+                        <div class="form-group">
+                            <label for="InputRangoInicial" class="col-form-label">Rango Inicial</label>
+                            <input id="InputRangoInicial" type="number" class="form-control" placeholder="0">
+                        </div>
+                        <!-- Rango Final:  -->
+                        <div class="form-group">
+                            <label for="InputRangoFinal" class="col-form-label">Rango Final</label>
+                            <input id="InputRangoFinal" type="number" class="form-control" placeholder="0">
+                        </div>
+                        <!-- Insertar Consecutivo:  -->
+                        <div class="form-group">
+                            <button class="btn btn-primary form-control" type="submit" onclick="Save()">
+                                <i class="glyphicon glyphicon-log-in"></i>
+                                Save
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Form Consecutivo  -->
+        <!-- ============================================================== -->
+
+        <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+        <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+        <script src="/Content/assets/libs/js/main-js.js"></script>
+        <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+        <script src="~/Scripts/jquery-logic/consecutive-jquery.js"></script>
+
+        <script type="text/javascript"></script>
+
+
+
+
+
+
+

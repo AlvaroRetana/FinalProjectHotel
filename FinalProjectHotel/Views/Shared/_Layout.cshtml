@@ -1,21 +1,200 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Insertar Consecutivos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <link rel="stylesheet" href="/Content/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/Content/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/Content/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/Content/assets/vendor/datepicker/tempusdominus-bootstrap-4.css" />
+    <link rel="stylesheet" href="/Content/assets/vendor/inputmask/css/inputmask.css" />
+
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+
 
 </head>
-<body>
-   
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Hotel Mandiola</p>
-        </footer>
-    </div>
 
-  
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Navigation Bar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="Views/Home/Index.aspx">H-Mandiola</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- Navigation Bar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Menu  -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Menu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Seguridad <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/User/ChangePassword">Cambiar Contraseña</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/ClientesActivos">Clientes Activos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/Consecutive">Cambiar Consecutivo</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/Habitaciones">Habitaciones</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/HabitacionesListas">Habitaciones Listas</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/Precios">Precios</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/User/AfterLogin">Precios</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Left Menu -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- ============================================================== -->
+                        <!-- Header  -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="page-header" id="top">
+                                    <h2 class="pageheader-title">H-Mandiola </h2>
+                                    <p class="pageheader-text"></p>
+                                    <div class="page-breadcrumb">
+                                        <nav aria-label="breadcrumb">
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- Header  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Render Body -->
+                        <!-- ============================================================== -->
+
+                        <div class="container body-content">
+                            @RenderBody()
+                            <hr />
+                            <footer>
+                                <p>&copy; @DateTime.Now.Year - Hotel Mandiola</p>
+                            </footer>
+                        </div>
+
+                        <!-- ============================================================== -->
+                        <!-- Render Body  -->
+                        <!-- ============================================================== -->
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- sidenavbar -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+                        <div class="sidebar-nav-fixed">
+                            <ul class="list-unstyled">
+                                <li><a href="#top">Volver arriba</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end sidenavbar -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+
+    <script src="/Scripts/jqueryLogic-App/jqueryLogin.js"></script>
+    <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/Content/assets/libs/js/main-js.js"></script>
+    <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
 </body>
+
 </html>
+
+
+
+
+
+
+
