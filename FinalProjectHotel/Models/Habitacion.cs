@@ -17,24 +17,26 @@ namespace FinalProjectHotel.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Habitacion()
         {
-            this.Cliente_Habitacion = new HashSet<Cliente_Habitacion>();
+            this.Compra_Habitacion = new HashSet<Compra_Habitacion>();
             this.Historial_Transaccion = new HashSet<Historial_Transaccion>();
+            this.Reservacion_habitacion = new HashSet<Reservacion_habitacion>();
         }
     
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Nombre { get; set; }
         public int Numero { get; set; }
         public string Descripcion { get; set; }
         public string Imagen { get; set; }
         public string Disponibilidad { get; set; }
-        public int ID_Precio { get; set; }
+        public string ID_Precio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente_Habitacion> Cliente_Habitacion { get; set; }
-        public virtual Consecutivo Consecutivo { get; set; }
+        public virtual ICollection<Compra_Habitacion> Compra_Habitacion { get; set; }
+        public virtual Consecutivo_Objeto Consecutivo_Objeto { get; set; }
         public virtual Precio Precio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Historial_Transaccion> Historial_Transaccion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reservacion_habitacion> Reservacion_habitacion { get; set; }
     }
 }

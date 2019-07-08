@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Insertar Consecutivos</title>
+    <title>H-Mandiola</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/Content/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/Content/assets/vendor/datepicker/tempusdominus-bootstrap-4.css" />
     <link rel="stylesheet" href="/Content/assets/vendor/inputmask/css/inputmask.css" />
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="" />
@@ -33,13 +32,13 @@
         <!-- Navigation Bar -->
         <!-- ============================================================== -->
         <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="Views/Home/Index.aspx">H-Mandiola</a>
+            <nav class="navbar navbar-expand-lg bg-white fixed-top"></nav>
+                <a class="navbar-brand" href="~/Views/User/AfterLogin">H-Mandiola</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-        </div>
+</div>
         <!-- ============================================================== -->
         <!-- Navigation Bar -->
         <!-- ============================================================== -->
@@ -49,7 +48,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="d-xl-none d-lg-none" href="#">Menu</a>
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -59,29 +58,58 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Seguridad <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Security <span class="badge badge-success">6</span></a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/User/ChangePassword">Cambiar Contraseña</a>
+                                            <a class="nav-link" href="~/User/ChangePassword">Change Password</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/Admin/ClientesActivos">Clientes Activos</a>
+                                            <a class="nav-link" href="~/User/AsignarRoles">Rol Asignation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/Admin/Consecutive">Cambiar Consecutivo</a>
+                                            <a class="nav-link" href="~/User/UserStatus">User Status</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-user-circle"></i>Administration<span class="badge badge-success">6</span></a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/ConsecutiveList">Consecutives List</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/Admin/Habitaciones">Habitaciones</a>
+                                            <a class="nav-link" href="~/Admin/ActivitiesList">Activities List</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/Admin/HabitacionesListas">Habitaciones Listas</a>
+                                            <a class="nav-link" href="~/Admin/RoomsList">Rooms List</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/Admin/Precios">Precios</a>
+                                            <a class="nav-link" href="~/Admin/PriceList">Prices List</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="~/User/AfterLogin">Precios</a>
+                                            <a class="nav-link" href="~/Admin/ActiveClients">Active Clients</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-user-circle"></i>Querys<span class="badge badge-success">6</span></a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/Faults">Faults</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/Binnacle">Binnacle</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/ActiveClients">Active Clients</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="~/Admin/AbleRooms">Able Rooms</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -91,6 +119,9 @@
                 </nav>
             </div>
         </div>
+
+
+       
         <!-- ============================================================== -->
         <!-- Left Menu -->
         <!-- ============================================================== -->
@@ -177,15 +208,6 @@
     <!-- ============================================================== -->
     <!-- end main wrapper -->
     <!-- ============================================================== -->
-
-    <script src="/Scripts/jqueryLogic-App/jqueryLogin.js"></script>
-    <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="/Content/assets/libs/js/main-js.js"></script>
-    <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 
 </body>

@@ -1,70 +1,60 @@
 ﻿
+@model IEnumerable<FinalProjectHotel.Models.Admin.ConsecutiveModel>
 @{
     ViewBag.Title = "ConsecutiveList";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
-
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10, selectionFieldName: "SelectedRow");
 }
+
 
 <!-- ============================================================== -->
 <!-- Form Lista Consecutivo -->
 <!-- ============================================================== -->
-<div class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="section-block" id="SectionConsecutivesList">
-            <h3 class="section-title">Lista Consecutivos</h3>
-
-        </div>
-        <div class="card">
-            <h5 class="card-header">Lista Consecutivos</h5>
-            <div class="card-body">
 
 
-                <div>
-                    @grid.Table(
-                   tableStyle: "table table-responsive table-bordered",
-                   columns: grid.Columns(
-                       grid.Column(columnName: "ID", header: "ID"),
-                       grid.Column(columnName: "Consecutivo", header: "Consecutive"),
-                       grid.Column(columnName: "Descripcion", header: "Description"),
-                       grid.Column(columnName: "Prefijo", header: "Prefix"),
-                       grid.Column(columnName: "Rango_Inicial", header: "Initial Range"),
-                       grid.Column(columnName: "Rango_Final", header: "Final Range")
 
-                    )
-                   )
-                    <div class="row">
-                        <div class="col-sm-7">
-                            @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+@grid.GetHtml(
+    tableStyle: "table",
+    mode: WebGridPagerModes.All,
+    fillEmptyRows: true,
+    firstText: "<< First",
+    previousText: "< Previous",
+    nextText: "Next >",
+    lastText: "Last >>",
+    alternatingRowStyle: "webgrid-alternating-row",
+    selectedRowStyle: "webgrid-selected-row",
+    columns: new[]
+    {
+        grid.Column("Codigo", "Código"),
+        grid.Column("ID_Consecutivo" ),
+        grid.Column("Descripcion"  ),
+        grid.Column("Prefijo"),
+        grid.Column("Rango_Inicial") ,
+        grid.Column("Rango_Final"),
+        grid.Column("Update", format: @<text> @item.GetSelectLink("Update")
+        </text>,  style: "col1Width" , canSort: false)
+                                                                                        }
+                                                                                      )
 
-                        </div>
-                    </div>
+<input class="btn btn-primary form-control" type="button" onclick="location.href='/Admin/InsertConsecutiveForm';" value="Add Consecutive" />
 
-                    @Html.Hidden("dir", grid.SortDirection)
-                    @Html.Hidden("col", grid.SortColumn)
+@if (grid.HasSelection)
 
-                </div>
+{
+    @RenderPage("~/Views/Admin/UpdateConsecutiveForm.cshtml", new { ConsecutiveModel = grid.SelectedRow })
+}
 
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- ============================================================== -->
 <!-- Form Lista Consecutivo  -->
 <!-- ============================================================== -->
-
 
 <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
 <script src="/Content/assets/libs/js/main-js.js"></script>
 <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
 <script src="~/Scripts/jquery-logic/consecutive-jquery.js"></script>
-
-<script type="text/javascript"></script>
 
 
 

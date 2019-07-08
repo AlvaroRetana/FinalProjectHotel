@@ -17,44 +17,17 @@ namespace FinalProjectHotel.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Consecutivo()
         {
-            this.Actividad = new HashSet<Actividad>();
-            this.Articulo = new HashSet<Articulo>();
-            this.Bitacora = new HashSet<Bitacora>();
-            this.Cliente = new HashSet<Cliente>();
-            this.Codigo_Descuento = new HashSet<Codigo_Descuento>();
-            this.Habitacion = new HashSet<Habitacion>();
-            this.Historial_Transaccion = new HashSet<Historial_Transaccion>();
-            this.Precio = new HashSet<Precio>();
-            this.Reservacion_habitacion = new HashSet<Reservacion_habitacion>();
-            this.Usuario_Admin = new HashSet<Usuario_Admin>();
+            this.Consecutivo_Objeto = new HashSet<Consecutivo_Objeto>();
         }
     
-        public int ID { get; set; }
-        public int Consecutivo1 { get; set; }
+        public int Codigo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Descripcion { get; set; }
         public string Prefijo { get; set; }
         public Nullable<int> Rango_inicial { get; set; }
         public Nullable<int> Rango_final { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Actividad> Actividad { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Articulo> Articulo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bitacora> Bitacora { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente> Cliente { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Codigo_Descuento> Codigo_Descuento { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Habitacion> Habitacion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Historial_Transaccion> Historial_Transaccion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Precio> Precio { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservacion_habitacion> Reservacion_habitacion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario_Admin> Usuario_Admin { get; set; }
+        public virtual ICollection<Consecutivo_Objeto> Consecutivo_Objeto { get; set; }
     }
 }

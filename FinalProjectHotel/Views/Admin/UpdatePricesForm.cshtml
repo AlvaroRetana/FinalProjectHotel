@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "UpdatePricesForm";
+}
+
+<!-- ============================================================== -->
+<!-- Form Actualizar Precios -->
+<!-- ============================================================== -->
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="section-block" id="SectionPrices">
+            <h3 class="section-title">Prices</h3>
+
+        </div>
+        <div class="card">
+            <h5 class="card-header">Update Price</h5>
+            <div class="card-body">
+
+                <!-- Consecutivo:  -->
+                <div class="form-group" id="SectionConsecutive">
+                    <label for="InputConsecutive" class="col-form-label">ID_Consecutive:</label>
+                    <input id="InputConsecutive" type="text" class="form-control" placeholder="0" value="@Page.PriceModel.ID_Consecutivo">
+
+                </div>
+
+                <!-- Tipo:  -->
+                <div class="form-group" id="SectionType">
+                    <label for="ComboBoxTipo">Type:</label>
+                    <select class="form-control" id="ComboBoxType">
+                        <option>Normal</option>
+                        <option>Deluxe</option>
+                        <option>Condominium</option>
+                        <option>Liquor</option>
+                        <option>Soda Drink</option>
+                        <option>Natural Drink</option>
+                        <option>Sweets</option>
+                        <option>Ice-Creams</option>
+                        <option>Flower</option>
+                        <option>Cakes</option>
+                    </select>
+                </div>
+                <!-- Precio:  -->
+                <div class="form-group" id="SectionPrice">
+                    <label for="InputPrice" class="col-form-label">Price:</label>
+                    <input id="InputPrice" type="text" class="form-control" placeholder="0" value="@Page.PriceModel.Precio">
+
+                </div>
+                <!-- Actualizar Precio:  -->
+                <div class="form-group">
+                    <button class="btn btn-primary form-control" type="submit" onclick="Update()">
+                        <i class="glyphicon glyphicon-log-in"></i>
+                        Update
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Form Actualizar Precios  -->
+<!-- ============================================================== -->
+
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="~/Scripts/jquery-logic/price-jquery.js"></script>
+
+
+
+
+

@@ -14,11 +14,19 @@ namespace FinalProjectHotel.Models
     
     public partial class Codigo_Descuento
     {
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
-        public int ID_Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Codigo_Descuento()
+        {
+            this.Compra = new HashSet<Compra>();
+            this.Reservacion = new HashSet<Reservacion>();
+        }
     
-        public virtual Cliente Cliente { get; set; }
-        public virtual Consecutivo Consecutivo { get; set; }
+        public string ID_Cod_Promo { get; set; }
+        public Nullable<int> Descuento { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Compra> Compra { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reservacion> Reservacion { get; set; }
     }
 }

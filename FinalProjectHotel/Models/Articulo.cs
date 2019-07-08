@@ -22,14 +22,11 @@ namespace FinalProjectHotel.Models
         }
     
         public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public int ID_Precio { get; set; }
+        public Nullable<int> ID_Precio { get; set; }
         public string Imagen { get; set; }
     
-        public virtual Consecutivo Consecutivo { get; set; }
-        public virtual Precio Precio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente_Articulo> Cliente_Articulo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

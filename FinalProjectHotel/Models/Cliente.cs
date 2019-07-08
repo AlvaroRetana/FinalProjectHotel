@@ -18,14 +18,12 @@ namespace FinalProjectHotel.Models
         public Cliente()
         {
             this.Cliente_Articulo = new HashSet<Cliente_Articulo>();
-            this.Cliente_Habitacion = new HashSet<Cliente_Habitacion>();
-            this.Codigo_Descuento = new HashSet<Codigo_Descuento>();
+            this.Compra = new HashSet<Compra>();
             this.Historial_Transaccion = new HashSet<Historial_Transaccion>();
-            this.Reservacion_habitacion = new HashSet<Reservacion_habitacion>();
+            this.Reservacion = new HashSet<Reservacion>();
         }
     
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Nombre { get; set; }
         public string Apellido1 { get; set; }
         public string Apellido2 { get; set; }
@@ -34,16 +32,14 @@ namespace FinalProjectHotel.Models
         public string Telefono { get; set; }
         public string Activo { get; set; }
     
-        public virtual Consecutivo Consecutivo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente_Articulo> Cliente_Articulo { get; set; }
+        public virtual Consecutivo_Objeto Consecutivo_Objeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente_Habitacion> Cliente_Habitacion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Codigo_Descuento> Codigo_Descuento { get; set; }
+        public virtual ICollection<Compra> Compra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Historial_Transaccion> Historial_Transaccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservacion_habitacion> Reservacion_habitacion { get; set; }
+        public virtual ICollection<Reservacion> Reservacion { get; set; }
     }
 }

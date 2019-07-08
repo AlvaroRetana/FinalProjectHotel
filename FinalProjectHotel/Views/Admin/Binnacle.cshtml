@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FinalProjectHotel.Models.Admin.BinnacleModel>
+@{
+    ViewBag.Title = "Binnacle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10, selectionFieldName: "SelectedRow");
+}
+
+<h2>Binnacle</h2>
+
+<!-- ============================================================== -->
+<!-- Form Lista Bitácora -->
+<!-- ============================================================== -->
+
+@grid.GetHtml(
+    tableStyle: "table",
+    mode: WebGridPagerModes.All,
+    fillEmptyRows: true,
+    firstText: "<< First",
+    previousText: "< Previous",
+    nextText: "Next >",
+    lastText: "Last >>",
+    columns: new[]
+    {
+        grid.Column("ID_Consecutivo" ),
+        grid.Column("Usuario"  ),
+        grid.Column("Fecha_Hora"  ),
+        grid.Column("Codigo_Registro"),
+        grid.Column("Tipo"),
+        grid.Column("Descripcion"),
+        grid.Column("Detalle")
+ }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     )
+
+@if (grid.HasSelection)
+
+{
+
+}
+
+<!-- ============================================================== -->
+<!-- Form Lista Bitácora  -->
+<!-- ============================================================== -->
+
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>

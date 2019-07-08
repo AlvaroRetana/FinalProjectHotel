@@ -58,7 +58,9 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividad.cs" />
     <Compile Include="Bitacora.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Consecutivo.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Precio.cs" />

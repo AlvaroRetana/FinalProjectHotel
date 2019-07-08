@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "InsertRoomsForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ============================================================== -->
+<!-- Form Insertar Habitaciones -->
+<!-- ============================================================== -->
+<form  enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="section-block" id="SectionRooms">
+                <h3 class="section-title">Rooms</h3>
+
+            </div>
+            <div class="card">
+                <h5 class="card-header">New Room</h5>
+                <div class="card-body">
+
+                    <!-- Consecutivo:  -->
+                    <div class="form-group" id="SectionDescripcion">
+                        <label for="ComboBoxConsecutive">Consecutive</label>
+                        <select class="form-control" id="ComboBoxConsecutive" name="ComboBoxConsecutive"></select>
+                    </div>
+
+                    <!-- Nombre:  -->
+                    <div class="form-group">
+                        <label for="InputName">Name:</label>
+                        <input id="InputName" type="text" class="form-control">
+                    </div>
+                    <!-- Descripción:  -->
+                    <div class="form-group" id="SectionDescripcion">
+                        <label for="ComboBoxDescription">Description</label>
+                        <select class="form-control" id="ComboBoxDescription">
+                            <option>Normal</option>
+                            <option>Deluxe</option>
+                            <option>Condominium</option>
+                        </select>
+                    </div>
+                    <!-- Número:  -->
+                    <div class="form-group" id="SectionNumber">
+                        <label for="InputNumber" class="col-form-label">Number:</label>
+                        <input id="InputNumber" type="number" class="form-control" placeholder="0">
+
+                    </div>
+                    <!-- Precio:  -->
+                    <div class="form-group" id="SectionDescripcion">
+                        <label for="ComboBoxPrice">Price:</label>
+                        <select class="form-control" id="ComboBoxPrice" name="ComboBoxPrice"></select>
+                    </div>
+
+                    <!-- Disponibilidad:  -->
+                    <div class="form-group">
+                        <label for="ComboBoxAvailability" class="col-form-label">Availability:</label>
+                        <select class="form-control" id="ComboBoxAvailability">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+
+                    <!-- Imagen:  -->
+                    <div class="form-group">
+                        <input type="file" name="file" id="file" /><br>
+                    </div>
+
+                    <!-- Insertar Habitación:  -->
+                    <div class="form-group">
+                        <button class="btn btn-primary form-control" type="submit" onclick="Save()">
+                            <i class="glyphicon glyphicon-log-in"></i>
+                            Save
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+    <!-- ============================================================== -->
+    <!-- Form Insertar Habitaciones  -->
+    <!-- ============================================================== -->
+
+
+    <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/Content/assets/libs/js/main-js.js"></script>
+    <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-logic/room-jquery.js"></script>
+
+
+
+

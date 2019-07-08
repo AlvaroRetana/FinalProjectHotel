@@ -13,12 +13,13 @@ namespace BLL
     public class Error
     {
         #region propiedades
-        private string _descripcion;
 
-        public string descripcion
+        private int _id;
+
+        public int id
         {
-            get { return _descripcion; }
-            set { _descripcion = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
         private int _numero;
@@ -27,7 +28,23 @@ namespace BLL
         {
             get { return _numero; }
             set { _numero = value; }
-         }
+        }
+
+        private string _descripcion;
+
+        public string descripcion
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+
+        private DateTime _fecha_hora;
+
+        public DateTime fecha_hora
+        {
+            get { return _fecha_hora; }
+            set { _fecha_hora = value; }
+        }
 
         private string _mensaje;
 
@@ -55,9 +72,9 @@ namespace BLL
         #endregion
 
         #region metodos
-        public DataSet lista_consecutivos()
+        public DataSet lista_errores()
         {
-            conexion = cls_DAL.trae_conexion("V-Vuelos", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores
@@ -66,7 +83,7 @@ namespace BLL
             }
             else
             {
-                sql = "usp_consulta_consecutivos";
+                sql = "usp_consulta_errores";
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
@@ -85,7 +102,7 @@ namespace BLL
         
         public void agregar_errores()
         {
-            conexion = cls_DAL.trae_conexion("V-Vuelos", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores
@@ -96,9 +113,10 @@ namespace BLL
             {
                 sql = "usp_inserta_error";
 
-                ParamStruct[] parametros = new ParamStruct[2];
+                ParamStruct[] parametros = new ParamStruct[3];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Numero", SqlDbType.Int, _numero);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Fecha_Hora", SqlDbType.DateTime, _fecha_hora);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);

@@ -14,20 +14,21 @@ namespace BLL
     public class Consecutivo
     {
         #region propiedades
-        private int _id;
 
-        public int id
+        private int _codigo;
+
+        public int codigo
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _codigo; }
+            set { _codigo = value; }
         }
 
-        private int _consecutivo;
+        private string _id_consecutivo;
 
-        public int consecutivo
+        public string id_consecutivo
         {
-            get { return _consecutivo; }
-            set { _consecutivo = value; }
+            get { return _id_consecutivo; }
+            set { _id_consecutivo = value; }
         }
 
         private string _descripcion;
@@ -115,6 +116,33 @@ namespace BLL
 
         }
 
+        public DataSet lista_id_consecutivos()
+        {
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
+                return null;
+            }
+            else
+            {
+                sql = "usp_info_consecutivos";
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+
+        }
+
         public void datos_consecutivo(int ID)
         {
             conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
@@ -127,7 +155,7 @@ namespace BLL
             {
                 sql = "usp_info_consecutivo";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID", SqlDbType.Int, ID);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Codigo", SqlDbType.Int, ID);
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
@@ -138,8 +166,8 @@ namespace BLL
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        _id = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
-                        _consecutivo = Convert.ToInt32(ds.Tables[0].Rows[0]["Consecutivo"]);
+                        _codigo = Convert.ToInt32(ds.Tables[0].Rows[0]["Codigo"]);
+                        _id_consecutivo = ds.Tables[0].Rows[0]["ID_Consecutivo"].ToString();
                         _descripcion = ds.Tables[0].Rows[0]["Descripcion"].ToString();
                         _prefijo = ds.Tables[0].Rows[0]["Prefijo"].ToString();
                         _rango_inicial = Convert.ToInt32(ds.Tables[0].Rows[0]["Rango_inicial"]);
@@ -148,43 +176,6 @@ namespace BLL
                     else
                     {
                         _descripcion = "Error";
-                        _num_error = numero_error;
-                        _mensaje = mensaje_error;
-                    }
-                }
-            }
-        }
-
-        public void numero_consecutivo(int consecutivo)
-        {
-            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
-            if (conexion == null)
-            {
-                //insertar en la table de errores
-                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
-            }
-            else
-            {
-                sql = "usp_numero_consecutivo";
-                ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Consecutivo", SqlDbType.Int, consecutivo);
-                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
-                if (numero_error != 0)
-                {
-                    //insertar en la table de errores
-                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
-                }
-                else
-                {
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        
-                      
-                  
-                    }
-                    else
-                    {
-                 
                         _num_error = numero_error;
                         _mensaje = mensaje_error;
                     }
@@ -206,7 +197,7 @@ namespace BLL
                     sql = "usp_inserta_consecutivo";
               
                 ParamStruct[] parametros = new ParamStruct[5];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Consecutivo", SqlDbType.Int, _consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.VarChar, _id_consecutivo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Descripcion", SqlDbType.VarChar, _descripcion);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Prefijo", SqlDbType.VarChar, _prefijo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Rango_inicial", SqlDbType.Int, _rango_inicial);
@@ -232,8 +223,8 @@ namespace BLL
                
              
                 ParamStruct[] parametros = new ParamStruct[6];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID", SqlDbType.Int, _id);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Consecutivo", SqlDbType.Int, _consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Codigo", SqlDbType.Int, _codigo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@ID_Consecutivo", SqlDbType.VarChar, _id_consecutivo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Descripcion", SqlDbType.VarChar, _descripcion);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Prefijo", SqlDbType.VarChar, _prefijo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Rango_inicial", SqlDbType.Int, _rango_inicial);
@@ -253,8 +244,8 @@ namespace BLL
                     bitacora.usuario = System.Web.HttpContext.Current.User.Identity.Name;
                     bitacora.codigo_registro = 1;
                     bitacora.tipo = "Modificar";
-                    bitacora.descripcion = "Se actualizó un elemento en la tabla Consecutivo con ID: "+_id;
-                    bitacora.detalle = "Datos insertados, Consecutivo: " + consecutivo + ", Prefijo: " + prefijo + ", Rango inicial: " + rango_inicial + ", Rango final: " + rango_final;
+                    bitacora.descripcion = "Se actualizó un elemento en la tabla Consecutivo con ID: "+_codigo;
+                    bitacora.detalle = "Datos insertados, Consecutivo: " + id_consecutivo + ", Prefijo: " + prefijo + ", Rango inicial: " + rango_inicial + ", Rango final: " + rango_final;
                     bitacora.agregar_bitacora();
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                 

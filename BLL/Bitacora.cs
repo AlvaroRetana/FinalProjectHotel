@@ -13,17 +13,9 @@ namespace BLL
     {
         #region propiedades
 
-        private int _id;
+        private string _id_consecutivo;
 
-        public int id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        private int _id_consecutivo;
-
-        public int id_consecutivo
+        public string id_consecutivo
         {
             get { return _id_consecutivo; }
             set { _id_consecutivo = value; }
@@ -103,9 +95,9 @@ namespace BLL
         #endregion
 
         #region metodos
-        public DataSet carga_bitacora()
+        public DataSet lista_bitacora()
         {
-            conexion = cls_DAL.trae_conexion("h-mandiola", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores
@@ -127,7 +119,7 @@ namespace BLL
 
         public void datos_bitacora(int ID)
         {
-            conexion = cls_DAL.trae_conexion("V-Vuelos", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores
@@ -148,8 +140,7 @@ namespace BLL
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        _id = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
-                        _id_consecutivo = Convert.ToInt32(ds.Tables[0].Rows[0]["ID_Consecutivo"]);
+                        _id_consecutivo = ds.Tables[0].Rows[0]["ID_Consecutivo"].ToString();  
                         _usuario = ds.Tables[0].Rows[0]["Usuario"].ToString();
                         _fecha_hora = Convert.ToDateTime(ds.Tables[0].Rows[0]["Fecha_Hora"].ToString());
                         _codigo_registro = Convert.ToInt32(ds.Tables[0].Rows[0]["Codigo_registro"]);
@@ -171,7 +162,7 @@ namespace BLL
 
         public void agregar_bitacora()
         {
-            conexion = cls_DAL.trae_conexion("V-Vuelos", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores
@@ -183,7 +174,7 @@ namespace BLL
                     sql = "usp_inserta_bitacora";
               
                 ParamStruct[] parametros = new ParamStruct[6];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.Int, _id_consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.VarChar, _id_consecutivo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Usuario", SqlDbType.VarChar, _usuario);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Codigo_registro", SqlDbType.Int, _codigo_registro);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Tipo", SqlDbType.VarChar, _tipo);
@@ -210,7 +201,7 @@ namespace BLL
 
         public bool eliminar_bitacora(int ID)
         {
-            conexion = cls_DAL.trae_conexion("V-Vuelos", ref mensaje_error, ref numero_error);
+            conexion = cls_DAL.trae_conexion("H-Mandiola", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
                 //insertar en la table de errores

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<FinalProjectHotel.Models.Admin.ErrorModel>
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10, selectionFieldName: "SelectedRow");
+}
+
+<!-- ============================================================== -->
+<!-- Form Lista Errores -->
+<!-- ============================================================== -->
+
+<h2>Error</h2>
+
+@grid.GetHtml(
+    tableStyle: "table",
+    mode: WebGridPagerModes.All,
+    fillEmptyRows: true,
+    firstText: "<< First",
+    previousText: "< Previous",
+    nextText: "Next >",
+    lastText: "Last >>",
+    columns: new[]
+    {
+        grid.Column("ID" ),
+        grid.Column("Descripcion"  ),
+        grid.Column("Numero"),
+        grid.Column("Fecha_Hora")
+    }
+    )
+
+<!-- ============================================================== -->
+<!-- Form Lista Errores -->
+<!-- ============================================================== -->
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+

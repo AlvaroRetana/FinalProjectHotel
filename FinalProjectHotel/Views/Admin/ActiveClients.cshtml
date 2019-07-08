@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FinalProjectHotel.Models.Admin.ClientModel>
+@{
+    ViewBag.Title = "ActiveClients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10, selectionFieldName: "SelectedRow");
+}
+
+
+<!-- ============================================================== -->
+<!-- Form Clientes Activos -->
+<!-- ============================================================== -->
+
+<h2>Active Clients</h2>
+
+@grid.GetHtml(
+      tableStyle: "table",
+      mode: WebGridPagerModes.All,
+      fillEmptyRows: true,
+      firstText: "<< First",
+      previousText: "< Previous",
+      nextText: "Next >",
+      lastText: "Last >>",
+      columns: new[]
+      {
+          grid.Column("ID_Consecutivo" ),
+          grid.Column("Nombre"),
+          grid.Column("Apellido1"),
+          grid.Column("Apellido2"  ),
+          grid.Column("Correo"),
+          grid.Column("Telefono"),
+          grid.Column("Activo")
+
+  })
+
+<!-- ============================================================== -->
+<!-- Form Clientes Activos -->
+<!-- ============================================================== -->
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+
+
+
+
+
