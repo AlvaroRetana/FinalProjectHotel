@@ -15,7 +15,7 @@ namespace FinalProjectHotel.Models
     public partial class Cliente_Articulo
     {
         public int ID { get; set; }
-        public int ID_Cliente { get; set; }
+        public string ID_Cliente { get; set; }
         public int ID_Articulo { get; set; }
         public System.DateTime Fecha_Hora { get; set; }
     

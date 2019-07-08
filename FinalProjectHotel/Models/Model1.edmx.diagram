@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f97c5e554ca94c96a791ab57e43332ed" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Actividad" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Articulo" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Bitacora" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Cliente" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Cliente_Articulo" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Codigo_Descuento" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Compra" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Compra_Habitacion" Width="1.5" PointX="12.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Consecutivo" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Consecutivo_Objeto" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Error" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Habitacion" Width="1.5" PointX="10.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Historial_Transaccion" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Precio" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reservacion" Width="1.5" PointX="7.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reservacion_habitacion" Width="1.5" PointX="12.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Usuario_Admin" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Actividad_Consecutivo_Objeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Cliente_Articulo_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Historial_Transaccion_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bitacora_Consecutivo_Objeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Cliente_Articulo_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Cliente_Consecutivo_Objeto1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Compra_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Historial_Transaccion_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservacion_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Compra_Codigo_Descuento" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservacion_Codigo_Descuento" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Compra_Habitacion_Compra" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Compra_Habitacion_Habitacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Consecutivo_Objeto_Consecutivo" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Habitacion_Consecutivo_Objeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Precio_Consecutivo_Objeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Habitacion_Precio" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Historial_Transaccion_Habitacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservacion_habitacion_Habitacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservacion_habitacion_Reservacion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

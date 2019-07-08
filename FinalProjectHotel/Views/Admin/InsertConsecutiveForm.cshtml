@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "InsertConsecutiveForm";
+}
+
+
+<!-- ============================================================== -->
+<!-- Form Insertar Consecutivo -->
+<!-- ============================================================== -->
+
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="section-block" id="SectionConsecutives">
+            <h3 class="section-title">Consecutives</h3>
+
+        </div>
+        <div class="card">
+            <h5 class="card-header">New Consecutive</h5>
+            <div class="card-body">
+
+                <!-- Descripción:  -->
+                <div class="form-group" id="SectionDescription">
+                    <label for="ComboBoxDescripcion">Description</label>
+                    <select class="form-control" id="ComboBoxDescripcion" >
+                        <option>Rooms</option>
+                        <option>Activities</option>
+                        <option>Prices</option>
+                        <option>Actives</option>
+                        <option>Reservations</option>
+                        <option>Clients</option>
+                        <option>Binnacle</option>
+                    </select>
+                </div>
+                <!-- Consecutivo:  -->
+                <div class="form-group" id="SectionConsecutive">
+                    <label for="InputConsecutivo" class="col-form-label">Consecutive</label>
+                    <input id="InputConsecutivo" type="number" required="" class="form-control" placeholder="0" >
+
+                </div>
+                <!-- Posee Prefijo:  -->
+                <div class="form-group" id="SectionPrefix">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" checked="" id="HavePrefix" class="custom-control-input"><span class="custom-control-label">Have Prefix</span>
+                    </label>
+                </div>
+                <!-- Prefijo:  -->
+                <div class="form-group">
+                    <label for="InputPrefijo">Prefix:</label>
+                    <input id="InputPrefijo" type="text" class="form-control">
+                </div>
+                <!-- Posee Rango:  -->
+                <div class="form-group" id="SectionRange">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" checked="" id="HaveRange" class="custom-control-input"><span class="custom-control-label">Have Range</span>
+                    </label>
+                </div>
+                <!-- Rango Inicial:  -->
+                <div class="form-group">
+                    <label for="InputRangoInicial" class="col-form-label">Initial Range</label>
+                    <input id="InputRangoInicial" type="number" class="form-control" placeholder="0">
+                </div>
+                <!-- Rango Final:  -->
+                <div class="form-group">
+                    <label for="InputRangoFinal" class="col-form-label">Final Range</label>
+                    <input id="InputRangoFinal" type="number" class="form-control" placeholder="0">
+                </div>
+                <!-- Insertar Consecutivo:  -->
+                <div class="form-group">
+                    <button class="btn btn-primary form-control" type="submit" onclick="Save()">
+                        <i class="glyphicon glyphicon-log-in"></i>
+                        Save
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================== -->
+<!-- Form Consecutivo  -->
+<!-- ============================================================== -->
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="~/Scripts/jquery-logic/consecutive-jquery.js"></script>
+

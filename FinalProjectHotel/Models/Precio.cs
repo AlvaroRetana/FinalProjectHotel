@@ -17,18 +17,14 @@ namespace FinalProjectHotel.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Precio()
         {
-            this.Articulo = new HashSet<Articulo>();
             this.Habitacion = new HashSet<Habitacion>();
         }
     
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Tipo { get; set; }
-        public int Precio1 { get; set; }
+        public Nullable<double> Precio1 { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Articulo> Articulo { get; set; }
-        public virtual Consecutivo Consecutivo { get; set; }
+        public virtual Consecutivo_Objeto Consecutivo_Objeto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Habitacion> Habitacion { get; set; }
     }

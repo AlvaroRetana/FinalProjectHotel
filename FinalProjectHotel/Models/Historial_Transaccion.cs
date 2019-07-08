@@ -15,16 +15,14 @@ namespace FinalProjectHotel.Models
     public partial class Historial_Transaccion
     {
         public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
-        public int ID_Cliente { get; set; }
+        public string ID_Cliente { get; set; }
         public int Metodo_pago { get; set; }
         public int Monto { get; set; }
-        public Nullable<int> ID_Habitacion { get; set; }
+        public string ID_Habitacion { get; set; }
         public Nullable<int> ID_Articulo { get; set; }
     
         public virtual Articulo Articulo { get; set; }
         public virtual Cliente Cliente { get; set; }
-        public virtual Consecutivo Consecutivo { get; set; }
         public virtual Habitacion Habitacion { get; set; }
     }
 }

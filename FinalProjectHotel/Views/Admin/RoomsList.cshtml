@@ -1,0 +1,66 @@
+﻿
+
+@model IEnumerable<FinalProjectHotel.Models.Admin.RoomModel>
+
+@{
+    ViewBag.Title = "RoomsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10);
+}
+
+<h2>RoomsList</h2>
+
+
+<!-- ============================================================== -->
+<!-- Form Habitaciones Listas -->
+<!-- ============================================================== -->
+
+
+@grid.GetHtml(
+    tableStyle: "table",
+    mode: WebGridPagerModes.All,
+    fillEmptyRows: true,
+    firstText: "<< First",
+    previousText: "< Previous",
+    nextText: "Next >",
+    lastText: "Last >>",
+    columns: new[]
+    {
+        grid.Column("ID_Consecutivo", "ID" ),
+        grid.Column("Nombre", "Name"),
+        grid.Column("Numero", "Number"),
+        grid.Column("Descripcion", "Description" ),
+        grid.Column ("Imagen", "Image", format: @<text><img alt="@item.Nombre"
+                                                  src="@Url.Content(item.Imagen)" width='200px' height='100px' /></text>,  style: "sixtypx"),
+                grid.Column("Disponibilidad", "Availability"),
+                grid.Column("ID_Precio", "Price_ID"),
+                      grid.Column("Update", format: @<text>
+                        @item.GetSelectLink("Update")
+                    </text>,  style: "col1Width" , canSort: false)
+
+                    })
+
+                    <input class="btn btn-primary form-control" type="button" onclick="location.href='/Admin/InsertRoomsForm';" value="Add Room" />
+
+                    @if (grid.HasSelection)
+
+                    {
+                        @RenderPage("~/Views/Admin/UpdateRoomsForm.cshtml", new { RoomModel = grid.SelectedRow })
+                    }
+
+
+                    <!-- ============================================================== -->
+                    <!-- Form Habitaciones Listas  -->
+                    <!-- ============================================================== -->
+
+
+                    <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+                    <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+                    <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+                    <script src="/Content/assets/libs/js/main-js.js"></script>
+                    <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+
+

@@ -14,20 +14,11 @@ namespace FinalProjectHotel.Models
     
     public partial class Actividad
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Actividad()
-        {
-            this.Reservacion_habitacion = new HashSet<Reservacion_habitacion>();
-        }
-    
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Imagen { get; set; }
     
-        public virtual Consecutivo Consecutivo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservacion_habitacion> Reservacion_habitacion { get; set; }
+        public virtual Consecutivo_Objeto Consecutivo_Objeto { get; set; }
     }
 }

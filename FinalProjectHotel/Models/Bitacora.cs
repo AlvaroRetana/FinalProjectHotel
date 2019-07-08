@@ -14,8 +14,7 @@ namespace FinalProjectHotel.Models
     
     public partial class Bitacora
     {
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
+        public string ID_Consecutivo { get; set; }
         public string Usuario { get; set; }
         public System.DateTime Fecha_Hora { get; set; }
         public int Codigo_registro { get; set; }
@@ -23,6 +22,6 @@ namespace FinalProjectHotel.Models
         public string Descripcion { get; set; }
         public string Detalle { get; set; }
     
-        public virtual Consecutivo Consecutivo { get; set; }
+        public virtual Consecutivo_Objeto Consecutivo_Objeto { get; set; }
     }
 }

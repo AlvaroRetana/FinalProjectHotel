@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "UpdateRoomsForm";
+}
+
+<!-- ============================================================== -->
+<!-- Form Actualizar Habitaciones -->
+<!-- ============================================================== -->
+<form enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="section-block" id="SectionRooms">
+                <h3 class="section-title">Rooms</h3>
+
+            </div>
+            <div class="card">
+                <h5 class="card-header">Update Room</h5>
+                <div class="card-body">
+
+                    <!-- ID_Consecutivo:  -->
+                    <div class="form-group">
+                        <label for="InputID">ID:</label>
+                        <input id="InputID" type="text" class="form-control" value="@Page.RoomModel.ID_Consecutivo " disabled="">
+                    </div>
+                    <!-- Nombre:  -->
+                    <div class="form-group">
+                        <label for="InputName">Name:</label>
+                        <input id="InputName" type="text" class="form-control" value="@Page.RoomModel.Nombre ">
+                    </div>
+                    <!-- Descripción:  -->
+                    <div class="form-group" id="SectionDescripcion">
+                        <label for="ComboBoxDescription">Description</label>
+                        <select class="form-control" id="ComboBoxDescription">
+                            <option>Normal</option>
+                            <option>Deluxe</option>
+                            <option>Condominium</option>
+                        </select>
+                    </div>
+                    <!-- Número:  -->
+                    <div class="form-group" id="SectionNumber">
+                        <label for="InputNumber" class="col-form-label">Number:</label>
+                        <input id="InputNumber" type="text" class="form-control" placeholder="0" value="@Page.RoomModel.Numero ">
+                    </div>
+                    <!-- Precio:  -->
+                    <div class="form-group" id="SectionDescripcion">
+                        <label for="ComboBoxPrice">Price:</label>
+                        <select class="form-control" id="ComboBoxPrice" name="ComboBoxPrice"></select>
+                    </div>
+
+
+                    <!-- Disponibilidad:  -->
+                    <div class="form-group">
+                        <label for="ComboBoxAvailability" class="col-form-label">Availability:</label>
+                        <select class="form-control" id="ComboBoxAvailability">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+
+                    <!-- Imagen:  -->
+                    <div class="form-group">
+                        <input type="file" name="file" id="file" /><br>
+                    </div>
+
+                    <!-- Imagen Actual:  -->
+                    <div class="form-group" id="SectionImage">
+                        <label for="InputImage" class="col-form-label">Actual Image:</label>
+                        <input id="InputImage" type="text" class="form-control" value="@Page.RoomModel.Imagen " disabled="">
+                    </div>
+
+                    <!-- Actualizar Habitación:  -->
+                    <div class="form-group">
+                        <button class="btn btn-primary form-control" type="submit" onclick="Update()" >
+                            <i class="glyphicon glyphicon-log-in"></i>
+                            Update
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+    <!-- ============================================================== -->
+    <!-- Form Actualizar Habitaciones  -->
+    <!-- ============================================================== -->
+
+
+    <script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/Content/assets/libs/js/main-js.js"></script>
+    <script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-logic/room-jquery.js"></script>
+
+
+
+
+

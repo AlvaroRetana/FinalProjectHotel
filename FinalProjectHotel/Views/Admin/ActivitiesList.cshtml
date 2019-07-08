@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FinalProjectHotel.Models.Admin.ActivityModel>
+@{
+    ViewBag.Title = "ActivitiesList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10, selectionFieldName: "SelectedRow");
+}
+
+<h2>ActivityList</h2>
+
+<!-- ============================================================== -->
+<!-- Form Lista Actividades -->
+<!-- ============================================================== -->
+
+
+
+@grid.GetHtml(
+    tableStyle: "table",
+    mode: WebGridPagerModes.All,
+    fillEmptyRows: true,
+    firstText: "<< First",
+    previousText: "< Previous",
+    nextText: "Next >",
+    lastText: "Last >>",
+    columns: new[]
+    {
+        grid.Column("ID_Consecutivo" ),
+        grid.Column("Nombre"  ),
+        grid.Column("Descripcion"  ),
+        grid.Column("Imagen"),
+        grid.Column("Update", format: @<text> @item.GetSelectLink("Update")
+        </text>,  style: "col1Width" , canSort: false),
+                                                                        grid.Column("Delete", format: @<text>
+            <button id="delete" class="edit-user display-mode">Delete</button>
+            <button id="accept" class="save-user edit-mode">Yes</button>
+            <button id="decline" class="cancel-user edit-mode">No</button>
+                                                                        </text>,  style: "col3Width" , canSort: false) }
+                                                                                                                                                                                                                                                                                                                                                                                                         )
+
+@if (grid.HasSelection)
+
+{
+
+}
+<input class="btn btn-primary form-control" type="button" onclick="location.href='/Admin/Activity';" value="Add Price" />
+
+
+<!-- ============================================================== -->
+<!-- Form Lista Actividades  -->
+<!-- ============================================================== -->
+
+
+<script src="/Content/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/Content/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/Content/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/Content/assets/libs/js/main-js.js"></script>
+<script src="/Content/assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>

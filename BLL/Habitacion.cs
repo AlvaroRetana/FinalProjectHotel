@@ -13,17 +13,10 @@ namespace BLL
     public class Habitacion
     {
         #region propiedades
-        private int _id;
 
-        public int id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
+        private string _id_consecutivo;
 
-        private int _id_consecutivo;
-
-        public int id_consecutivo
+        public string id_consecutivo
         {
             get { return _id_consecutivo; }
             set { _id_consecutivo = value; }
@@ -69,9 +62,9 @@ namespace BLL
             set { _disponibilidad = value; }
         }
 
-        private int _id_precio;
+        private string _id_precio;
 
-        public int id_precio
+        public string id_precio
         {
             get { return _id_precio; }
             set { _id_precio = value; }
@@ -153,14 +146,13 @@ namespace BLL
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        _id = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
-                        _id_consecutivo= Convert.ToInt32(ds.Tables[0].Rows[0]["ID_Consecutivo"]);
+                        _id_consecutivo= ds.Tables[0].Rows[0]["ID_Consecutivo"].ToString();
                         _nombre = ds.Tables[0].Rows[0]["Nombre"].ToString();
                         _numero = Convert.ToInt32(ds.Tables[0].Rows[0]["Numero"]);
                         _descripcion = ds.Tables[0].Rows[0]["Descripcion"].ToString();
                         _imagen= ds.Tables[0].Rows[0]["Imagen"].ToString();
                         _disponibilidad = ds.Tables[0].Rows[0]["Disponibilidad"].ToString();
-                        _id_precio = Convert.ToInt32(ds.Tables[0].Rows[0]["ID_Precio"]);
+                        _id_precio = ds.Tables[0].Rows[0]["ID_Precio"].ToString(); 
                     }
                     else
                     {
@@ -187,35 +179,17 @@ namespace BLL
                     sql = "usp_inserta_habitacion";
               
                 ParamStruct[] parametros = new ParamStruct[7];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.Int, _id_consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.VarChar, _id_consecutivo);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, _nombre);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Numero", SqlDbType.Int, _numero);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Descripcion", SqlDbType.VarChar, _descripcion);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Imagen", SqlDbType.VarChar, _imagen);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Disponibilidad", SqlDbType.VarChar, _disponibilidad);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@ID_Precio", SqlDbType.Int, _id_precio);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@ID_Precio", SqlDbType.VarChar, _id_precio);
 
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
-                if (numero_error != 0)
-                {
-                    //insertar en la table de errores
-                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numero_error.ToString() + "&men=" + mensaje_error);
-                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
-                 
-                }
-                else
-                {
-                    Bitacora bitacora = new Bitacora();
-                    bitacora.usuario = System.Web.HttpContext.Current.User.Identity.Name;
-                    bitacora.codigo_registro = 1;
-                    bitacora.tipo = "Agregar";
-                    bitacora.descripcion = "Se insertó un nuevo elemento en la tabla Habitacion";
-                    bitacora.detalle = "Datos insertados, ID Consecutivo: " +id_consecutivo+", Nombre: "+nombre+", Número: "+numero+", Descripción: "+descripcion + ", Imagen: " +imagen + ", Disponibilidad: " +disponibilidad + ", ID Precio: " +id_precio;
-                    bitacora.agregar_bitacora();
-                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
-                    
-                }
+
             }
         }
 
@@ -233,15 +207,14 @@ namespace BLL
                     sql = "usp_modifica_habitacion";
                
              
-                ParamStruct[] parametros = new ParamStruct[8];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID", SqlDbType.Int, _id);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@ID_Consecutivo", SqlDbType.Int, _id_consecutivo);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Nombre", SqlDbType.VarChar, _nombre);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Numero", SqlDbType.Int, _numero);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Descripcion", SqlDbType.VarChar, _descripcion);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Imagen", SqlDbType.VarChar, _imagen);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Disponibilidad", SqlDbType.VarChar, _disponibilidad);
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@ID_Precio", SqlDbType.Int, _id_precio);
+                ParamStruct[] parametros = new ParamStruct[7];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@ID_Consecutivo", SqlDbType.VarChar, _id_consecutivo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, _nombre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Numero", SqlDbType.Int, _numero);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Imagen", SqlDbType.VarChar, _imagen);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Disponibilidad", SqlDbType.VarChar, _disponibilidad);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@ID_Precio", SqlDbType.VarChar, _id_precio);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
 
@@ -258,7 +231,7 @@ namespace BLL
                     bitacora.usuario = System.Web.HttpContext.Current.User.Identity.Name;
                     bitacora.codigo_registro = 1;
                     bitacora.tipo = "Modificar";
-                    bitacora.descripcion = "Se actualizó un elemento en la tabla Habitacion con ID: "+_id;
+                    bitacora.descripcion = "Se actualizó un elemento en la tabla Habitacion con ID: "+_id_consecutivo;
                     bitacora.detalle = "Datos insertados, ID Consecutivo: " + id_consecutivo + ", Nombre: " + nombre + ", Número: " + numero + ", Descripción: " + descripcion + ", Imagen: " + imagen + ", Disponibilidad: " + disponibilidad + ", ID Precio: " + id_precio;
                     bitacora.agregar_bitacora();
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);

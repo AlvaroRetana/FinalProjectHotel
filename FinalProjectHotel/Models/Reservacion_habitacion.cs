@@ -14,16 +14,11 @@ namespace FinalProjectHotel.Models
     
     public partial class Reservacion_habitacion
     {
-        public int ID { get; set; }
-        public int ID_Consecutivo { get; set; }
-        public int ID_Cliente { get; set; }
-        public Nullable<int> ID_Actividad { get; set; }
-        public Nullable<int> Cantidad_Acompañantes { get; set; }
-        public int Cantidad_Habitaciones { get; set; }
-        public int Booking_ID { get; set; }
+        public int ID_Reser_Habit { get; set; }
+        public string ID_Reservacion { get; set; }
+        public string ID_Habitacion { get; set; }
     
-        public virtual Actividad Actividad { get; set; }
-        public virtual Cliente Cliente { get; set; }
-        public virtual Consecutivo Consecutivo { get; set; }
+        public virtual Habitacion Habitacion { get; set; }
+        public virtual Reservacion Reservacion { get; set; }
     }
 }
