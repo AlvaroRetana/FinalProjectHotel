@@ -271,7 +271,7 @@ namespace FinalProjectHotel.Controllers
         public JsonResult GetConsecutives()
         {
 
-            Entities1 entities = new Entities1();
+            Entities entities = new Entities();
             return Json(entities.Consecutivo_Objeto.Where(x => x.ID_ConsecutivoObjeto.Contains("HAB"))
                 .Select(x => new
             {
@@ -284,7 +284,7 @@ namespace FinalProjectHotel.Controllers
         public JsonResult GetPrices()
         {
 
-            Entities1 entities = new Entities1();
+            Entities entities = new Entities();
             return Json(entities.Precio.Select(x => new
             {
                 Consecutive = x.ID_Consecutivo,

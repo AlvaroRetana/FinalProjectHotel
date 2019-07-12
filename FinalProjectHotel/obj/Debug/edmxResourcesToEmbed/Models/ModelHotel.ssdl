@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actividad">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="ID_Precio" Type="int" />
+    <Property Name="Imagen" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fecha_Hora" Type="datetime" Nullable="false" />
+    <Property Name="Codigo_registro" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Cliente_Articulo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Cliente" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_Articulo" Type="int" Nullable="false" />
+    <Property Name="Fecha_Hora" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Codigo_Descuento">
+    <Key>
+      <PropertyRef Name="ID_Cod_Promo" />
+    </Key>
+    <Property Name="ID_Cod_Promo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descuento" Type="int" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="ID_Compra" />
+    </Key>
+    <Property Name="ID_Compra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Cliente" Type="varchar" MaxLength="10" />
+    <Property Name="Mascotas" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID_Cod_Promo" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha_Hora_Entrada" Type="datetime" Nullable="false" />
+    <Property Name="Fecha_Hora_Salida" Type="datetime" Nullable="false" />
+    <Property Name="Num_Habitaciones" Type="int" />
+    <Property Name="Precio_Total" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Compra_Habitacion">
+    <Key>
+      <PropertyRef Name="ID_Comp_Habit" />
+    </Key>
+    <Property Name="ID_Comp_Habit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Compra" Type="int" Nullable="false" />
+    <Property Name="ID_Habitacion" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consecutivo">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Prefijo" Type="char" MaxLength="5" />
+    <Property Name="Rango_inicial" Type="int" />
+    <Property Name="Rango_final" Type="int" />
+  </EntityType>
+  <EntityType Name="Consecutivo_Objeto">
+    <Key>
+      <PropertyRef Name="ID_ConsecutivoObjeto" />
+    </Key>
+    <Property Name="ID_ConsecutivoObjeto" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Codigo_Consecutivo" Type="int" Nullable="false" />
+    <Property Name="Ultimo_Digito" Type="int" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_hora" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Habitacion">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="300" />
+    <Property Name="Disponibilidad" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID_Precio" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Historial_Transaccion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Cliente" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Metodo_pago" Type="int" Nullable="false" />
+    <Property Name="Monto" Type="int" Nullable="false" />
+    <Property Name="ID_Habitacion" Type="varchar" MaxLength="10" />
+    <Property Name="ID_Articulo" Type="int" />
+  </EntityType>
+  <EntityType Name="Precio">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Precio" Type="float" />
+  </EntityType>
+  <EntityType Name="Reservacion">
+    <Key>
+      <PropertyRef Name="ID_Consecutivo" />
+    </Key>
+    <Property Name="ID_Consecutivo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_Cliente" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mascotas" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID_Cod_Promo" Type="varchar" MaxLength="50" />
+    <Property Name="BookingID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_Hora_Entrada" Type="datetime" Nullable="false" />
+    <Property Name="Fecha_Hora_Salida" Type="datetime" Nullable="false" />
+    <Property Name="Num_Habitaciones" Type="int" />
+    <Property Name="Precio_Total" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Reservacion_habitacion">
+    <Key>
+      <PropertyRef Name="ID_Reser_Habit" />
+    </Key>
+    <Property Name="ID_Reser_Habit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Reservacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_Habitacion" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuario_Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefono" Type="int" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Administrador" Type="bit" />
+    <Property Name="Seguridad" Type="bit" />
+    <Property Name="Consecutivo" Type="bit" />
+    <Property Name="Mantenimiento" Type="bit" />
+    <Property Name="Consulta" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Actividad_Consecutivo_Objeto">
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="1" />
+    <End Role="Actividad" Type="Self.Actividad" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo_Objeto">
+        <PropertyRef Name="ID_ConsecutivoObjeto" />
+      </Principal>
+      <Dependent Role="Actividad">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bitacora_Consecutivo_Objeto">
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="1" />
+    <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo_Objeto">
+        <PropertyRef Name="ID_ConsecutivoObjeto" />
+      </Principal>
+      <Dependent Role="Bitacora">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Articulo_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="Cliente_Articulo" Type="Self.Cliente_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cliente_Articulo">
+        <PropertyRef Name="ID_Articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Articulo_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Cliente_Articulo" Type="Self.Cliente_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Cliente_Articulo">
+        <PropertyRef Name="ID_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_Consecutivo_Objeto1">
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo_Objeto">
+        <PropertyRef Name="ID_ConsecutivoObjeto" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="ID_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_Codigo_Descuento">
+    <End Role="Codigo_Descuento" Type="Self.Codigo_Descuento" Multiplicity="0..1" />
+    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Codigo_Descuento">
+        <PropertyRef Name="ID_Cod_Promo" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="ID_Cod_Promo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_Habitacion_Compra">
+    <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+    <End Role="Compra_Habitacion" Type="Self.Compra_Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="ID_Compra" />
+      </Principal>
+      <Dependent Role="Compra_Habitacion">
+        <PropertyRef Name="ID_Compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_Habitacion_Habitacion">
+    <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="1" />
+    <End Role="Compra_Habitacion" Type="Self.Compra_Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Compra_Habitacion">
+        <PropertyRef Name="ID_Habitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consecutivo_Objeto_Consecutivo">
+    <End Role="Consecutivo" Type="Self.Consecutivo" Multiplicity="1" />
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Consecutivo_Objeto">
+        <PropertyRef Name="Codigo_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitacion_Consecutivo_Objeto">
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="1" />
+    <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo_Objeto">
+        <PropertyRef Name="ID_ConsecutivoObjeto" />
+      </Principal>
+      <Dependent Role="Habitacion">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitacion_Precio">
+    <End Role="Precio" Type="Self.Precio" Multiplicity="1" />
+    <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Precio">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Habitacion">
+        <PropertyRef Name="ID_Precio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Historial_Transaccion_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="0..1" />
+    <End Role="Historial_Transaccion" Type="Self.Historial_Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Historial_Transaccion">
+        <PropertyRef Name="ID_Articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Historial_Transaccion_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Historial_Transaccion" Type="Self.Historial_Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Historial_Transaccion">
+        <PropertyRef Name="ID_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Historial_Transaccion_Habitacion">
+    <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="0..1" />
+    <End Role="Historial_Transaccion" Type="Self.Historial_Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Historial_Transaccion">
+        <PropertyRef Name="ID_Habitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Precio_Consecutivo_Objeto">
+    <End Role="Consecutivo_Objeto" Type="Self.Consecutivo_Objeto" Multiplicity="1" />
+    <End Role="Precio" Type="Self.Precio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Consecutivo_Objeto">
+        <PropertyRef Name="ID_ConsecutivoObjeto" />
+      </Principal>
+      <Dependent Role="Precio">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservacion_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Reservacion">
+        <PropertyRef Name="ID_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservacion_Codigo_Descuento">
+    <End Role="Codigo_Descuento" Type="Self.Codigo_Descuento" Multiplicity="0..1" />
+    <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Codigo_Descuento">
+        <PropertyRef Name="ID_Cod_Promo" />
+      </Principal>
+      <Dependent Role="Reservacion">
+        <PropertyRef Name="ID_Cod_Promo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservacion_habitacion_Habitacion">
+    <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="1" />
+    <End Role="Reservacion_habitacion" Type="Self.Reservacion_habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitacion">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Reservacion_habitacion">
+        <PropertyRef Name="ID_Habitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservacion_habitacion_Reservacion">
+    <End Role="Reservacion" Type="Self.Reservacion" Multiplicity="1" />
+    <End Role="Reservacion_habitacion" Type="Self.Reservacion_habitacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservacion">
+        <PropertyRef Name="ID_Consecutivo" />
+      </Principal>
+      <Dependent Role="Reservacion_habitacion">
+        <PropertyRef Name="ID_Reservacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente_Articulo" EntityType="Self.Cliente_Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Codigo_Descuento" EntityType="Self.Codigo_Descuento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compra_Habitacion" EntityType="Self.Compra_Habitacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consecutivo" EntityType="Self.Consecutivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consecutivo_Objeto" EntityType="Self.Consecutivo_Objeto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Error" EntityType="Self.Error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Habitacion" EntityType="Self.Habitacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Historial_Transaccion" EntityType="Self.Historial_Transaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Precio" EntityType="Self.Precio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservacion" EntityType="Self.Reservacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservacion_habitacion" EntityType="Self.Reservacion_habitacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario_Admin" EntityType="Self.Usuario_Admin" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Actividad_Consecutivo_Objeto" Association="Self.FK_Actividad_Consecutivo_Objeto">
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+      <End Role="Actividad" EntitySet="Actividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bitacora_Consecutivo_Objeto" Association="Self.FK_Bitacora_Consecutivo_Objeto">
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+      <End Role="Bitacora" EntitySet="Bitacora" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Articulo_Articulo" Association="Self.FK_Cliente_Articulo_Articulo">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Cliente_Articulo" EntitySet="Cliente_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Articulo_Cliente" Association="Self.FK_Cliente_Articulo_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Cliente_Articulo" EntitySet="Cliente_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_Consecutivo_Objeto1" Association="Self.FK_Cliente_Consecutivo_Objeto1">
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_Cliente" Association="Self.FK_Compra_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_Codigo_Descuento" Association="Self.FK_Compra_Codigo_Descuento">
+      <End Role="Codigo_Descuento" EntitySet="Codigo_Descuento" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_Habitacion_Compra" Association="Self.FK_Compra_Habitacion_Compra">
+      <End Role="Compra" EntitySet="Compra" />
+      <End Role="Compra_Habitacion" EntitySet="Compra_Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_Habitacion_Habitacion" Association="Self.FK_Compra_Habitacion_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="Compra_Habitacion" EntitySet="Compra_Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consecutivo_Objeto_Consecutivo" Association="Self.FK_Consecutivo_Objeto_Consecutivo">
+      <End Role="Consecutivo" EntitySet="Consecutivo" />
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitacion_Consecutivo_Objeto" Association="Self.FK_Habitacion_Consecutivo_Objeto">
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+      <End Role="Habitacion" EntitySet="Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitacion_Precio" Association="Self.FK_Habitacion_Precio">
+      <End Role="Precio" EntitySet="Precio" />
+      <End Role="Habitacion" EntitySet="Habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Historial_Transaccion_Articulo" Association="Self.FK_Historial_Transaccion_Articulo">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Historial_Transaccion" EntitySet="Historial_Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Historial_Transaccion_Cliente" Association="Self.FK_Historial_Transaccion_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Historial_Transaccion" EntitySet="Historial_Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Historial_Transaccion_Habitacion" Association="Self.FK_Historial_Transaccion_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="Historial_Transaccion" EntitySet="Historial_Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Precio_Consecutivo_Objeto" Association="Self.FK_Precio_Consecutivo_Objeto">
+      <End Role="Consecutivo_Objeto" EntitySet="Consecutivo_Objeto" />
+      <End Role="Precio" EntitySet="Precio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservacion_Cliente" Association="Self.FK_Reservacion_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Reservacion" EntitySet="Reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservacion_Codigo_Descuento" Association="Self.FK_Reservacion_Codigo_Descuento">
+      <End Role="Codigo_Descuento" EntitySet="Codigo_Descuento" />
+      <End Role="Reservacion" EntitySet="Reservacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservacion_habitacion_Habitacion" Association="Self.FK_Reservacion_habitacion_Habitacion">
+      <End Role="Habitacion" EntitySet="Habitacion" />
+      <End Role="Reservacion_habitacion" EntitySet="Reservacion_habitacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservacion_habitacion_Reservacion" Association="Self.FK_Reservacion_habitacion_Reservacion">
+      <End Role="Reservacion" EntitySet="Reservacion" />
+      <End Role="Reservacion_habitacion" EntitySet="Reservacion_habitacion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
