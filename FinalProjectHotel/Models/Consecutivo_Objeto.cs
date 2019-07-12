@@ -17,6 +17,7 @@ namespace FinalProjectHotel.Models
         public string ID_ConsecutivoObjeto { get; set; }
         public int Codigo_Consecutivo { get; set; }
         public Nullable<int> Ultimo_Digito { get; set; }
+        public string Disponibilidad { get; set; }
     
         public virtual Actividad Actividad { get; set; }
         public virtual Bitacora Bitacora { get; set; }

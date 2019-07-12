@@ -13,3 +13,9 @@ C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\bin\De
 C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.dll
 C:\Users\Sebas\Documents\Universidad\Diseño Web II\FinalProjectHotel\DAL\obj\Debug\DAL.pdb
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\bin\Debug\DAL.dll
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\bin\Debug\DAL.pdb
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\obj\Debug\DAL.dll
+C:\Users\MSI\Desktop\DiseñoWebII\FinalProjectHotel\DAL\obj\Debug\DAL.pdb

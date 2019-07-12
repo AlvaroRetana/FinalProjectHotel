@@ -16,7 +16,7 @@ namespace FinalProjectHotel.Controllers
     public class UserController : Controller
     {
 
-        Entities1 db = new Entities1();
+        Entities db = new Entities();
         SqlConnection conexion = new SqlConnection("Data Source=h-mandiola.database.windows.net;Initial Catalog=h-mandiola;User ID=dream-team;Password=Ulacit2019."); //catalog= bd_demo
         public static string CurrentPassword = "", CurrenteUsername = "";
 
@@ -193,7 +193,7 @@ namespace FinalProjectHotel.Controllers
 
         public List<Cliente> GetClientes(string search, string sort, string sortdir, int skip, int pageSize, out int totalRecord)
         {
-            using(Entities1 dc = new Entities1())
+            using(Entities dc = new Entities())
             {
                 var v = (from a in dc.Cliente
                          where

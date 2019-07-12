@@ -1,0 +1,170 @@
+﻿
+@model IEnumerable<FinalProjectHotel.Models.Bitacora>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <link href="~/Content/table.css/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/table.css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#customers tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            background-color: #d0ecc0; 
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #00ffff;
+            }
+
+            #customers tr:hover {
+                background-color: #eeffd9;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body background="https://www.pixelstalk.net/wp-content/uploads/2016/04/Golf-Wallpaper-Backgrounds-Pics-1.jpg">
+
+    <div align="center">
+
+        <h2>Filterable Table</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+        <input id="myInput" type="text" placeholder="Search..">
+        <br><br>
+
+
+        <table id="customers" class="myTable " style="width:70%" >
+            <thead>
+            <th>ID</th>
+            <th>User</th>
+            <th>Date</th>
+            <th>Code</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Detail</th>
+
+            </thead>
+            @foreach (FinalProjectHotel.Models.Bitacora bitacora in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td class="ID_Consecutivo">
+                            <span>@bitacora.ID_Consecutivo</span>
+                        </td>
+                        <td class="Usuario">
+                            <span>@bitacora.Usuario</span>
+                            <input type="text" value="@bitacora.Usuario" style="display:none" />
+                        </td>
+                        <td class="Fecha_Hora">
+                            <span>@bitacora.Fecha_Hora</span>
+
+                            <input type="text" value="@bitacora.Fecha_Hora" style="display:none" />
+                        </td>
+
+                        <td class="Codigo_registro">
+                            <span>@bitacora.Codigo_registro</span>
+
+                            <input type="text" value="@bitacora.Codigo_registro" style="display:none" />
+                        </td>
+                        <td class="Tipo">
+                            <span>@bitacora.Tipo</span>
+
+                            <input type="text" value="@bitacora.Tipo" style="display:none" />
+                        </td>
+
+                        <td class="Descripcion">
+                            <span>@bitacora.Descripcion</span>
+
+                            <input type="text" value="@bitacora.Descripcion" style="display:none" />
+
+                        <td class="Detalle">
+                            <span>@bitacora.Detalle</span>
+
+                            <input type="text" value="@bitacora.Detalle" style="display:none" />
+                        </td>
+
+
+                    </tr>
+                </tbody>
+            }
+        </table>
+
+
+
+    </div>
+</body>
+
+</html>
+

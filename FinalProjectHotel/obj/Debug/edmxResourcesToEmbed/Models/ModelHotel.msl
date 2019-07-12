@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Actividad">
+      <EntityTypeMapping TypeName="Model.Actividad">
+        <MappingFragment StoreEntitySet="Actividad">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articulo">
+      <EntityTypeMapping TypeName="Model.Articulo">
+        <MappingFragment StoreEntitySet="Articulo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ID_Precio" ColumnName="ID_Precio" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bitacora">
+      <EntityTypeMapping TypeName="Model.Bitacora">
+        <MappingFragment StoreEntitySet="Bitacora">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Codigo_registro" ColumnName="Codigo_registro" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="Model.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente_Articulo">
+      <EntityTypeMapping TypeName="Model.Cliente_Articulo">
+        <MappingFragment StoreEntitySet="Cliente_Articulo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="ID_Articulo" ColumnName="ID_Articulo" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Codigo_Descuento">
+      <EntityTypeMapping TypeName="Model.Codigo_Descuento">
+        <MappingFragment StoreEntitySet="Codigo_Descuento">
+          <ScalarProperty Name="ID_Cod_Promo" ColumnName="ID_Cod_Promo" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="Model.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="ID_Compra" ColumnName="ID_Compra" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="Mascotas" ColumnName="Mascotas" />
+          <ScalarProperty Name="ID_Cod_Promo" ColumnName="ID_Cod_Promo" />
+          <ScalarProperty Name="Fecha_Hora_Entrada" ColumnName="Fecha_Hora_Entrada" />
+          <ScalarProperty Name="Fecha_Hora_Salida" ColumnName="Fecha_Hora_Salida" />
+          <ScalarProperty Name="Num_Habitaciones" ColumnName="Num_Habitaciones" />
+          <ScalarProperty Name="Precio_Total" ColumnName="Precio_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra_Habitacion">
+      <EntityTypeMapping TypeName="Model.Compra_Habitacion">
+        <MappingFragment StoreEntitySet="Compra_Habitacion">
+          <ScalarProperty Name="ID_Comp_Habit" ColumnName="ID_Comp_Habit" />
+          <ScalarProperty Name="ID_Compra" ColumnName="ID_Compra" />
+          <ScalarProperty Name="ID_Habitacion" ColumnName="ID_Habitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consecutivo">
+      <EntityTypeMapping TypeName="Model.Consecutivo">
+        <MappingFragment StoreEntitySet="Consecutivo">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Prefijo" ColumnName="Prefijo" />
+          <ScalarProperty Name="Rango_inicial" ColumnName="Rango_inicial" />
+          <ScalarProperty Name="Rango_final" ColumnName="Rango_final" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consecutivo_Objeto">
+      <EntityTypeMapping TypeName="Model.Consecutivo_Objeto">
+        <MappingFragment StoreEntitySet="Consecutivo_Objeto">
+          <ScalarProperty Name="Ultimo_Digito" ColumnName="Ultimo_Digito" />
+          <ScalarProperty Name="ID_ConsecutivoObjeto" ColumnName="ID_ConsecutivoObjeto" />
+          <ScalarProperty Name="Codigo_Consecutivo" ColumnName="Codigo_Consecutivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Error">
+      <EntityTypeMapping TypeName="Model.Error">
+        <MappingFragment StoreEntitySet="Error">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha_hora" ColumnName="Fecha_hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitacion">
+      <EntityTypeMapping TypeName="Model.Habitacion">
+        <MappingFragment StoreEntitySet="Habitacion">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+          <ScalarProperty Name="ID_Precio" ColumnName="ID_Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Historial_Transaccion">
+      <EntityTypeMapping TypeName="Model.Historial_Transaccion">
+        <MappingFragment StoreEntitySet="Historial_Transaccion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="Metodo_pago" ColumnName="Metodo_pago" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="ID_Habitacion" ColumnName="ID_Habitacion" />
+          <ScalarProperty Name="ID_Articulo" ColumnName="ID_Articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Precio">
+      <EntityTypeMapping TypeName="Model.Precio">
+        <MappingFragment StoreEntitySet="Precio">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Precio1" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservacion">
+      <EntityTypeMapping TypeName="Model.Reservacion">
+        <MappingFragment StoreEntitySet="Reservacion">
+          <ScalarProperty Name="ID_Consecutivo" ColumnName="ID_Consecutivo" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="Mascotas" ColumnName="Mascotas" />
+          <ScalarProperty Name="ID_Cod_Promo" ColumnName="ID_Cod_Promo" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="Fecha_Hora_Entrada" ColumnName="Fecha_Hora_Entrada" />
+          <ScalarProperty Name="Fecha_Hora_Salida" ColumnName="Fecha_Hora_Salida" />
+          <ScalarProperty Name="Num_Habitaciones" ColumnName="Num_Habitaciones" />
+          <ScalarProperty Name="Precio_Total" ColumnName="Precio_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservacion_habitacion">
+      <EntityTypeMapping TypeName="Model.Reservacion_habitacion">
+        <MappingFragment StoreEntitySet="Reservacion_habitacion">
+          <ScalarProperty Name="ID_Reser_Habit" ColumnName="ID_Reser_Habit" />
+          <ScalarProperty Name="ID_Reservacion" ColumnName="ID_Reservacion" />
+          <ScalarProperty Name="ID_Habitacion" ColumnName="ID_Habitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario_Admin">
+      <EntityTypeMapping TypeName="Model.Usuario_Admin">
+        <MappingFragment StoreEntitySet="Usuario_Admin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Administrador" ColumnName="Administrador" />
+          <ScalarProperty Name="Seguridad" ColumnName="Seguridad" />
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+          <ScalarProperty Name="Mantenimiento" ColumnName="Mantenimiento" />
+          <ScalarProperty Name="Consulta" ColumnName="Consulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -17,7 +17,7 @@ namespace FinalProjectHotel.Models
         public string ID_Consecutivo { get; set; }
         public string Usuario { get; set; }
         public System.DateTime Fecha_Hora { get; set; }
-        public int Codigo_registro { get; set; }
+        public string Codigo_registro { get; set; }
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
         public string Detalle { get; set; }
